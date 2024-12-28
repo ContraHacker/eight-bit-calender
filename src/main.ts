@@ -1,6 +1,6 @@
-import './style.css'
+import './style.css';
 
-let year = new Date().getFullYear();
+let year = new Date().getFullYear() + 1;
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
@@ -40,26 +40,23 @@ function generate_month(container: HTMLElement, month_index: number) {
   const div = document.createElement('div');
 
   div.className = 'month';
-  
+
   ['s', 'm', 't', 'w', 't', 'f', 's'].forEach(d => {
-    
+
     const day = document.createElement('span');
-    
+
     day.className = 'day';
     day.innerHTML = d;
-    
+
     div.appendChild(day);
-    
+
   });
 
-  const offset = new Date(year, month_index, 1).getDay(); 
+  const offset = new Date(year, month_index, 1).getDay();
 
   for (let x = 0; x < offset; x++) {
 
     const date = document.createElement('span');
-
-    date.innerHTML = '';
-    date.style.backgroundColor = 'transparent';
 
     div.appendChild(date);
 
@@ -68,7 +65,7 @@ function generate_month(container: HTMLElement, month_index: number) {
   const num_days = new Date(year, month_index + 1, 0).getDate();
 
   for (let x = 1; x <= num_days; x++) {
-    
+
     const date = document.createElement('span');
 
     date.className = 'date';
