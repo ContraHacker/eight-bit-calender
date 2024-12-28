@@ -1,6 +1,6 @@
 import './style.css';
 
-let year = new Date().getFullYear() + 1;
+let year = new Date().getFullYear();
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
